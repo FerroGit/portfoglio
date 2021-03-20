@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- SYNE MONO -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet"> <!-- QUICKSAND -->
+    <title>Lorenzo Ferretti</title>
 </head>
 <body>
-    <h1>hello world</h1>
+    <div id="app">
+        
+        <header>
+            <div class="container">
+                
+                <h1>
+                    <a href="#jumbo">
+                        LORENZO  <span> FERRETTI </span>
+                    </a>
+                </h1>
+                
+                <ul>
+                    <li><a href="#section1"> About me </a></li>
+                    <li> <a href="#section2"> My project</a></li>
+                    <li> <a href="#section3">Contact </a</li>
+                    </ul>
+                </div>
+            </header>
+            <main>
+                <section id="jumbo">
+                    
+                </section>
+                <section class="about-me" id="section1">
+                    <div class="container-flex padding-section">
+                        <h2>ABOUT <span> ME </span> </h2>
+                        <div class="paragraph-me">
+                            <div class="container-left">
+                                
+                                <p>Sono sempre stato un appassionato dell'ambiente tecnologico. Durante i miei studi avendo scelto un percorso scolastico
+                                    orientato alla programmazione ho potuto vedere alcuni linguaggi e ne sono stato da subito colpito. Finiti gli studi ho
+                                    però intrapreso carriere diverse, a distanza di anni ho deciso di formarmi e trasformare la mia passione in lavoro.
+                                </p>
+                                <h2 style="margin: 20px 0 5px 0;"> Competenze Acquisite</h2>
+                                <ul>
+                                    <li>Sviluppo Front-End</li>
+                                    <li>HTML | CSS | SCSS | Bootsrap | Javascript | JQuery | Vue.js</li>
+                                </ul>
+                                <ul>
+                                    <li>Sviluppo Back-End</li>
+                                    <li>PHP | SQL e MYSQL | Laravel</li>
+                                </ul>
+                            </div>
+                            <div class="container-image">
+                                
+                                <img src="img/portfoglio-image.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="my-project" id="section2">
+                    <div class="container-flex">
+                        
+                        <h2> <span> MY </span> PROJECT</h2>
+                        <p>
+                            Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers
+                        </p>
+                    </div>
+                    <div class="slider-container" tabindex="10" @keydown.right="nextImg" @keydown.left='prevImg'>
+                        <div class="carousel">
+                            
+                            <i class="fas fa-arrow-left" @click="prevImg"></i>
+                            
+                            <div v-for="(item, index) in carousel" :class="active(index)">
+                                <div v-for="data in carousel[indexCarousel].data"  >
+                                    <img  :src="data.img" v-on:click="toggle = !toggle" :value="toggle">
+                                    <div class="description-img">
+                                        <transition name="slide"> 
+                                            <div v-if="toggle">
+                                               <p>
+                                                   {{data.desc}}
+                                                </p> 
+                                            </div>
+                                        </transition>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <i class="fas fa-arrow-right" @click="nextImg"></i>
+                        </div>
+                    </div>
+                </section>
+                
+            
+        </main>
+    </div>
 </body>
+    <script src='js/script.js'></script>
 </html>
