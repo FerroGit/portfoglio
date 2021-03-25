@@ -43,6 +43,8 @@ header{
 .container > ul {
     padding-top: 2.5%;
     display: flex;
+    position: absolute;
+    right: 0;
 }
 
 .container > ul > li{
@@ -103,7 +105,7 @@ header{
 .paragraph-me{
    display: flex;
     position: relative;   
-    background-color: white;
+    margin: 20px 0 35px 0;  
     width: 80%;
     color: whitesmoke;
     font-family: 'Quicksand', sans-serif;
@@ -155,7 +157,7 @@ header{
 .carousel{
     display: flex;
     align-items: center;
-    padding: 100px;
+    padding: 100px 0 0 0;
 } 
 .carousel div{
     padding: 30px;
@@ -170,7 +172,7 @@ header{
 }
 .carousel img{
     max-width: 1000px;
-    min-width: 300px;
+    min-width: 400px;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -196,18 +198,10 @@ header{
     max-width: 1000px;
 }
 .description-img{
-    color: rgb(14, 14, 14);
-    width: 100%;
-    margin: 0;
-    background: rgb(230, 230, 230);
-    border: 2px solid black;
-    border-radius: 10px;
+    max-width: 1000px;
 }
-.description-img p:last-child{
-    margin-top: 10px;
-}
-.description-img p > span {
+
+.description-img  h3{
+    margin: 10px 0 0;
     color: rgb(0, 96, 185);
-    text-transform: uppercase;
-    font-weight: bolder;
 }

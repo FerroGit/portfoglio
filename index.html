@@ -15,17 +15,10 @@
 <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- SYNE MONO -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet"> <!-- QUICKSAND -->
-    <title>Lorenzo Ferretti</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- SYNE MONO -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet"> <!-- QUICKSAND -->
+<title>Lorenzo Ferretti</title>
 </head>
 <body>
     <div id="app">
@@ -93,13 +86,17 @@
                             
                             <div v-for="(item, index) in carousel" :class="active(index)">
                                 <div v-for="data in carousel[indexCarousel].data"  >
-                                    <img  :src="data.img" v-on:click="toggle = !toggle" :value="toggle">
+                                    <img  :src="data.img" @click="toggle = !toggle" :value="toggle">
                                     <div class="description-img">
                                         <transition name="slide"> 
                                             <div v-if="toggle">
                                                <p>
                                                    {{data.desc}}
+                                                   
                                                 </p> 
+                                                <h3>Tecnologie Utilizzate</h3>
+                                                <span>{{data.tec}} </span>
+                                                
                                             </div>
                                         </transition>
                                     </div>
