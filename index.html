@@ -35,107 +35,219 @@
                 <ul>
                     <li><a href="#section1"> About me </a></li>
                     <li> <a href="#section2"> My project</a></li>
-                    <li> <a href="#section3">Contact </a</li>
+                    <li> <a href="#section3">Contact </a></li>
                     </ul>
                 </div>
-            </header>
-            <main>
-                <section id="jumbo">
-                    
-                </section>
-                <section class="about-me" id="section1">
-                    <div class="container-flex padding-section">
-                        <h2>ABOUT <span> ME </span> </h2>
-                        <div class="paragraph-me">
-                            <div class="container-left">
-                                
-                                <p>Sono sempre stato un appassionato dell'ambiente tecnologico. Durante i miei studi avendo scelto un percorso scolastico
-                                    orientato alla programmazione ho potuto vedere alcuni linguaggi e ne sono stato da subito colpito. Finiti gli studi ho
-                                    però intrapreso carriere diverse, a distanza di anni ho deciso di formarmi e trasformare la mia passione in lavoro.
-                                </p>
-                                <h2 style="margin: 20px 0 5px 0;"> Competenze Acquisite</h2>
-                                <ul>
-                                    <li>Sviluppo Front-End</li>
-                                    <li>HTML | CSS | SCSS | Bootsrap | Javascript | JQuery | Vue.js</li>
-                                </ul>
-                                <ul>
-                                    <li>Sviluppo Back-End</li>
-                                    <li>PHP | SQL e MYSQL | Laravel</li>
-                                </ul>
-                            </div>
-                            <div class="container-image">
-                                
-                                <img src="img/portfoglio-image.jpg" alt="">
-                            </div>
+        </header>
+        <main>
+            <section id="jumbo">
+                
+            </section>
+            <section class="about-me" id="section1">
+                <div class="container-flex padding-section">
+                    <h2>ABOUT <span> ME </span> </h2>
+                    <div class="paragraph-me">
+                        <div class="container-left">
+                            
+                            <p>Sono sempre stato un appassionato dell'ambiente tecnologico. Durante i miei studi avendo scelto un percorso scolastico
+                                orientato alla programmazione ho potuto vedere alcuni linguaggi e ne sono stato da subito colpito. Finiti gli studi ho
+                                però intrapreso carriere diverse, a distanza di anni ho deciso di formarmi e trasformare la mia passione in lavoro.
+                            </p>
+                            <h2 style="margin: 20px 0 5px 0;"> Competenze Acquisite</h2>
+                            <ul>
+                                <li>Sviluppo Front-End</li>
+                                <li>HTML | CSS | SCSS | Bootsrap | Javascript | JQuery | Vue.js</li>
+                            </ul>
+                            <ul>
+                                <li>Sviluppo Back-End</li>
+                                <li>PHP | SQL e MYSQL | Laravel</li>
+                            </ul>
+                        </div>
+                        <div class="container-image">
+                            
+                            <img src="img/portfoglio-image.jpg" alt="">
                         </div>
                     </div>
-                </section>
-                
-                <section class="my-project" id="section2">
-                    <div class="container-flex">
+                </div>
+            </section>
+            
+            <section class="my-project" id="section2">
+                <div class="container-flex">
+                    
+                    <h2> <span> MY </span> PROJECT</h2>
+                    <p>
+                        Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers
+                    </p>
+                </div>
+                <div class="slider-container" tabindex="10" @keydown.right="prevImg" @keydown.left='nextImg'>
+                    <div class="carousel">
                         
-                        <h2> <span> MY </span> PROJECT</h2>
-                        <p>
-                            Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers
-                        </p>
-                    </div>
-                    <div class="slider-container" tabindex="10" @keydown.right="nextImg" @keydown.left='prevImg'>
-                        <div class="carousel">
-                            
-                            
-                            
-                            <!-- precedente -->
-                            <div v-for="(item, index) in carousel" :class="active(index)">
-                                <div v-for="data in carousel[indexCarousel1].data">
-                                    <div class="animation-img">
-                                        <img :src="data.img"  :value="toggle">
-                                    </div>
+                        
+                        
+                        <!-- precedente -->
+                        <div v-for="(item, index) in carousel" :class="active(index)">
+                            <div v-for="data in carousel[indexCarousel1].data">
+                                <div class="animation-img">
+                                    <img class="opacity" :src="data.img"  :value="toggle"  @click="nextImg">
                                 </div>
                             </div>
+                        </div>
+                        
+                        
+                        <!-- attivo -->
+                        <div v-for="(item, index) in carousel" :class="active(index)">
                             
-                            <i class="fas fa-arrow-left" @click="prevImg"></i>
-
-                            <!-- attivo -->
-                            <div v-for="(item, index) in carousel" :class="active(index)">
-                                <div v-for="data in carousel[indexCarousel].data">
-                                    <div class="animation-img">
-                                        <img  :src="data.img" @click="toggle = !toggle" :value="toggle">
-                                    </div>
-                                    <div class="description-img">
-                                        <transition name="slide"> 
-                                            <div v-if="toggle">
-                                               <p>
-                                                   {{data.desc}}
-                                                   
+                            <div class="card" v-for="data in carousel[indexCarousel].data">
+                                <div class="animation-img">
+                                    <img  class="face front" :src="data.img" :value="toggle">
+                                </div>
+                                <div class="description-img">
+                                    
+                                        <div class="face back" >
+                                            <div>
+                                                <h3>Descrizione</h3>
+                                                <p>
+                                                    {{data.desc}}
                                                 </p> 
+                                            </div>
+                                            <div>
                                                 <h3>Tecnologie Utilizzate</h3>
                                                 <span>{{data.tec}} </span>
-                                                
                                             </div>
-                                        </transition>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <i class="fas fa-arrow-right" @click="nextImg"></i>
-                            
-
-                            <!-- successivo -->
-                            <div v-for="(item, index) in carousel" :class="active(index)">
-                                <div v-for="data in carousel[indexCarousel2].data">
-                                    <div class="animation-img">
-                                        <img :src="data.img"  :value="toggle">
-                                    </div>
+                                            
+                                        </div>
+                                    
                                 </div>
                             </div>
-
+                        </div>
+                        
+                        <!-- successivo -->
+                        <div v-for="(item, index) in carousel" :class="active(index)">
+                            <div v-for="data in carousel[indexCarousel2].data">
+                                <div class="animation-img">
+                                    <img class="opacity" :src="data.img"  :value="toggle" @click="prevImg">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+        
+
+            <!-- FOOTER -->
+            <section id="section3">
+                <h1>Contact</h1>
+                <div class="cube">
+
+                    <div class="wrapper">
+                        <a href="https://github.com/FerroGit">
+                            <div class="box-area">
+                                
+                                
+                                <div class="box1"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box2"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box3"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box4"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box5"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box6"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSIO_dsJJiOX3Sntwxpw6lUIJKI0ueBlRpcQ3q57xVOw4-bCAQ2eX0v_5v2sf5CIiNA&usqp=CAU"
+                                    alt="">
+                                </div>
+                                
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="wrapper">
+                        <a href="https://www.linkedin.com/in/lorenzofer-95/">
+                            <div class="box-area">
+                                
+                                
+                                <div class="box1"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box2"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box3"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box4"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box5"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                <div class="box6"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwu2hhVeIoPniCYtMYgNrD_LSnv8B-9sDSjMd7AqNtN64Pq6Yninxn6ns8jjfZT3TRcVQ&usqp=CAU"
+                                    alt="">
+                                </div>
+                                
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="wrapper">
+                        <a href="https://www.instagram.com/dammenemila/">
+                            <div class="box-area">
+                                
+                                
+                                <div class="box1"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                                <div class="box2"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                                <div class="box3"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                                <div class="box4"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                                <div class="box5"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                                <div class="box6"><img
+                                    src="https://lh3.googleusercontent.com/proxy/6GpqJiH9r5ehypzaJBHlNOavq9TPwcCC5_B9KvkN8th5uKthV12J0VQc0qKmyDN-Gl519JSBl_f5UwfIK-xCez2dfV38hg5uTHw5YM9XYS1uJsphZjVvpZC2c2BlfMB_7L01TgdPj22FLA"
+                                    alt="">
+                                </div>
+                    
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
                 
-            
+            </section>
         </main>
+        
     </div>
 </body>
-    <script src='js/script.js'></script>
+<script src='js/script.js'></script>
 </html>

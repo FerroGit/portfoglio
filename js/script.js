@@ -76,6 +76,11 @@ var app = new Vue({
             this.indexCarousel2 = (this.carousel.length - 1);
         })
     },
+    mounted: function(){
+        setInterval(() => {
+            this.prevImg();
+        }, 30000);
+    },
     methods: {
         active: function (index) {
             if (index == this.indexCarousel) {
@@ -89,6 +94,7 @@ var app = new Vue({
             if (this.indexCarousel > (this.carousel.length - 1)) {
                 this.indexCarousel = 0 
             }*/
+            
             this.indexCarousel2 = this.indexCarousel;
              if (this.indexCarousel < (this.carousel.length - 2)) {
                 this.indexCarousel++;
