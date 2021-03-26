@@ -170,6 +170,7 @@ header{
 .opacity{
     filter: blur(3px) grayscale(70%);
     max-width: 350px;
+    cursor: pointer;
 }
 
 
