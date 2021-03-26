@@ -6,6 +6,7 @@ var app = new Vue({
         indexCarousel: 0,
         indexCarousel1: 1,
         indexCarousel2: 2,
+        interval: null,
         carousel: [
             {
                 project: "boolzapp",
@@ -13,7 +14,7 @@ var app = new Vue({
                     {
                     
                         img: "img/boolzap.jpg",
-                        desc: "Replica di un sito di chat, si ha la possibilità di mandare mandare messaggi e ricevere delle frasi di risposta",
+                        desc: "Replica di una piattaforma di messaggistica. E' possibile inviare e ricevere messaggi in maniera istantanea.",
                         tec: "Vue.JS | HTML | CSS"
                         
                     }
@@ -26,7 +27,7 @@ var app = new Vue({
                     {
                         
                         img: "img/boolflix.jpg",
-                        desc: "Creazione di un sito simile a Netflix. Sfruttando una chiamata axios ad un server esterno possiamo filtrare la ricerca dell'utente",
+                        desc: "Creazione di un sito simile a Netflix. L'utente potrà ricercare Film o Serie TV a piacimento",
                         tec: "Vue.JS | HTML | CSS"
                         
                     }
@@ -77,9 +78,9 @@ var app = new Vue({
         })
     },
     mounted: function(){
-        setInterval(() => {
-            this.prevImg();
-        }, 30000);
+        this.prevImg();
+        this.interval = setInterval(this.prevImg, 10000);
+
     },
     methods: {
         active: function (index) {
@@ -89,6 +90,7 @@ var app = new Vue({
                 return 'none';
             }
         },
+       
         nextImg: function () {
             /*this.indexCarousel++;
             if (this.indexCarousel > (this.carousel.length - 1)) {
@@ -125,6 +127,9 @@ var app = new Vue({
                 this.indexCarousel2 = (this.indexCarousel - 1);
             }
         },
+        clear(){
+            clearInterval(this.interval)
+            console.log(this.interval);
+        }
     },
-
 })

@@ -16,8 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- SYNE MONO -->
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet"> <!-- QUICKSAND -->
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Sans+Condensed:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> <!-- ubuntu -->
 <title>Lorenzo Ferretti</title>
 </head>
 <body>
@@ -34,8 +33,8 @@
                 
                 <ul>
                     <li><a href="#section1"> About me </a></li>
-                    <li> <a href="#section2"> My project</a></li>
-                    <li> <a href="#section3">Contact </a></li>
+                    <li> <a href="#section2"> My projects</a></li>
+                    <li> <a href="#section3">Contacts </a></li>
                     </ul>
                 </div>
         </header>
@@ -74,9 +73,9 @@
             <section class="my-project" id="section2">
                 <div class="container-flex">
                     
-                    <h2> <span> MY </span> PROJECT</h2>
+                    <h2> <span> MY </span> PROJECTS</h2>
                     <p>
-                        Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers
+                       <strong> Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers </strong>
                     </p>
                 </div>
                 <div class="slider-container" tabindex="10" @keydown.right="prevImg" @keydown.left='nextImg'>
@@ -88,7 +87,7 @@
                         <div v-for="(item, index) in carousel" :class="active(index)">
                             <div v-for="data in carousel[indexCarousel1].data">
                                 <div class="animation-img">
-                                    <img class="opacity" :src="data.img"  :value="toggle"  @click="nextImg">
+                                    <img class="opacity" :src="data.img"  @click="nextImg">
                                 </div>
                             </div>
                         </div>
@@ -99,7 +98,7 @@
                             
                             <div class="card" v-for="data in carousel[indexCarousel].data">
                                 <div class="animation-img">
-                                    <img  class="face front" :src="data.img" :value="toggle">
+                                    <img  class="face front" :src="data.img" @mouseenter="clear">
                                 </div>
                                 <div class="description-img">
                                     
@@ -125,7 +124,7 @@
                         <div v-for="(item, index) in carousel" :class="active(index)">
                             <div v-for="data in carousel[indexCarousel2].data">
                                 <div class="animation-img">
-                                    <img class="opacity" :src="data.img"  :value="toggle" @click="prevImg">
+                                    <img class="opacity" :src="data.img" @click="prevImg">
                                 </div>
                             </div>
                         </div>
@@ -136,7 +135,7 @@
 
             <!-- FOOTER -->
             <section id="section3">
-                <h1>Contact</h1>
+                <h1>Contacts</h1>
                 <div class="cube">
 
                     <div class="wrapper">
