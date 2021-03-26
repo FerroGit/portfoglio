@@ -149,33 +149,7 @@ header{
 
 
 /* slider */
-.slider-container{
-    display: flex;
-    justify-content: space-around;
-    cursor: pointer;
-}
-.carousel{
-    display: flex;
-    align-items: center;
-    padding: 100px 0 0 0;
-} 
-.carousel div{
-    padding: 30px;
-}
 
-.carousel i {
-    padding: 10px;
-    border: 3px solid rgb(0, 96, 185);
-    border-radius:50%;
-    font-size: 3rem;
-    color: #fff;
-}
-.carousel img{
-    max-width: 1000px;
-    min-width: 400px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
 .active{
     display: block;
 }
@@ -183,6 +157,7 @@ header{
     display: none;
 }
 
+/* transition */
 .slide-enter-active, .slide-leave-active  {
   transition: all 1s ease;
 }
@@ -205,3 +180,7 @@ header{
     margin: 10px 0 0;
     color: rgb(0, 96, 185);
 }
+
+
+
+/* animazione img carosello */

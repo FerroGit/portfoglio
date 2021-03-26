@@ -4,6 +4,8 @@ var app = new Vue({
     data: {
         toggle: false,
         indexCarousel: 0,
+        indexCarousel1: 1,
+        indexCarousel2: 2,
         carousel: [
             {
                 project: "boolzapp",
@@ -69,6 +71,11 @@ var app = new Vue({
             }
         ],
     },
+    mounted: function() {
+        this.$nextTick(function () {
+            this.indexCarousel2 = (this.carousel.length - 1);
+        })
+    },
     methods: {
         active: function (index) {
             if (index == this.indexCarousel) {
@@ -78,15 +85,38 @@ var app = new Vue({
             }
         },
         nextImg: function () {
-            this.indexCarousel++;
+            /*this.indexCarousel++;
             if (this.indexCarousel > (this.carousel.length - 1)) {
-                this.indexCarousel = 0
+                this.indexCarousel = 0 
+            }*/
+            this.indexCarousel2 = this.indexCarousel;
+             if (this.indexCarousel < (this.carousel.length - 2)) {
+                this.indexCarousel++;
+                this.indexCarousel1++
+            } else if (this.indexCarousel === (this.carousel.length - 2)) {
+                this.indexCarousel++;
+                this.indexCarousel1 = 0;
+            } else if (this.indexCarousel === (this.carousel.length - 1)) {
+                this.indexCarousel = 0;
+                this.indexCarousel1 = (this.indexCarousel + 1);
             }
         },
         prevImg: function () {
-            this.indexCarousel--;
-            if (this.indexCarousel < 0) {
-                this.indexCarousel = this.carousel.length - 1;
+            /*this.indexCarousel--;
+             if (this.indexCarousel < 0) {
+                this.indexCarousel = this.carousel.length - 1; */
+             if (this.indexCarousel > 1) {
+                this.indexCarousel--;
+                this.indexCarousel1 = (this.indexCarousel + 1);
+                this.indexCarousel2 = (this.indexCarousel - 1);
+            } else if (this.indexCarousel === 1) {
+                this.indexCarousel = 0;
+                this.indexCarousel1 = 1;
+                this.indexCarousel2 = (this.carousel.length - 1);
+            } else if (this.indexCarousel === 0) {
+                this.indexCarousel = (this.carousel.length - 1);
+                this.indexCarousel1 = 0;
+                this.indexCarousel2 = (this.indexCarousel - 1);
             }
         },
     },

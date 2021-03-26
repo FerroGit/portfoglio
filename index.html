@@ -82,11 +82,25 @@
                     <div class="slider-container" tabindex="10" @keydown.right="nextImg" @keydown.left='prevImg'>
                         <div class="carousel">
                             
-                            <i class="fas fa-arrow-left" @click="prevImg"></i>
                             
+                            
+                            <!-- precedente -->
                             <div v-for="(item, index) in carousel" :class="active(index)">
-                                <div v-for="data in carousel[indexCarousel].data"  >
-                                    <img  :src="data.img" @click="toggle = !toggle" :value="toggle">
+                                <div v-for="data in carousel[indexCarousel1].data">
+                                    <div class="animation-img">
+                                        <img :src="data.img"  :value="toggle">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <i class="fas fa-arrow-left" @click="prevImg"></i>
+
+                            <!-- attivo -->
+                            <div v-for="(item, index) in carousel" :class="active(index)">
+                                <div v-for="data in carousel[indexCarousel].data">
+                                    <div class="animation-img">
+                                        <img  :src="data.img" @click="toggle = !toggle" :value="toggle">
+                                    </div>
                                     <div class="description-img">
                                         <transition name="slide"> 
                                             <div v-if="toggle">
@@ -104,6 +118,17 @@
 
                             </div>
                             <i class="fas fa-arrow-right" @click="nextImg"></i>
+                            
+
+                            <!-- successivo -->
+                            <div v-for="(item, index) in carousel" :class="active(index)">
+                                <div v-for="data in carousel[indexCarousel2].data">
+                                    <div class="animation-img">
+                                        <img :src="data.img"  :value="toggle">
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
