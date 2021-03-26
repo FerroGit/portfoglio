@@ -129,7 +129,6 @@ var app = new Vue({
         },
         clear(){
             clearInterval(this.interval)
-            console.log(this.interval);
         }
     },
 })
