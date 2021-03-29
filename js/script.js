@@ -13,10 +13,10 @@ var app = new Vue({
                 data: [
                     {
                     
+                        github: "https://github.com/FerroGit/vue-boolzapp",
                         img: "img/boolzap.jpg",
                         desc: "Replica di una piattaforma di messaggistica. E' possibile inviare e ricevere messaggi in maniera istantanea.",
                         tec: "Vue.JS | HTML | CSS"
-                        
                     }
                 ],
             },
@@ -26,10 +26,10 @@ var app = new Vue({
 
                     {
                         
+                        github: "https://github.com/FerroGit/vue-boolflix",
                         img: "img/boolflix.jpg",
                         desc: "Creazione di un sito simile a Netflix. L'utente potrà ricercare Film o Serie TV a piacimento",
                         tec: "Vue.JS | HTML | CSS"
-                        
                     }
                 ],
             },
@@ -39,10 +39,10 @@ var app = new Vue({
 
                     {
                        
+                        github: "https://github.com/FerroGit/deliveboo-proj",
                         img: "img/barber.jpg",
                         desc: "Layout ispirato per essere utilizzato da un Barber Shop",
                         tec: "Vue.JS | HTML | CSS"
-                        
                     }
                 ],
             },
@@ -51,10 +51,10 @@ var app = new Vue({
                 data: [
                     {
                         
+                        github: "https://github.com/FerroGit/deliveboo-proj",
                         img: "img/deliveboo.jpg",
                         desc: "Creazione da zero un sito ispirato al food delivery. L'utente visitatore potrà ordinare piatti dal menu del ristorante selezionato, e procedere al pagamento, confermato via Mail. L'utente registrato potrà inserire il suo ristorante, creare, modificare o eliminare i suoi piatti dal menu, e infine controllare gli ordini ricevuti.",
                         tec: "Laravel | PHP | Braintree | Vue.JS | HTML | SASS | Bootstrap "
-                        
                     }
                 ]
             },
@@ -65,8 +65,8 @@ var app = new Vue({
                         
                         img: "img/spotify.jpg",
                         desc:"Replica Web App di Spotify",
+                        github: "https://github.com/FerroGit/html-css-spotifyweb",
                         tec: "HTML | CSS"
-                        
                     }
                 ]
             }

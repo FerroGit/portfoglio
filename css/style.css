@@ -173,6 +173,17 @@ header{
     max-width: 350px;
     cursor: pointer;
 }
+.card a{
+  color:rgb(14, 14, 14);
+}
+
+.card a:hover{
+    transition: 0.3s;
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+
 
 
 
