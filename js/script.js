@@ -13,7 +13,7 @@ var app = new Vue({
                 data: [
                     {
                     
-                        github: "https://github.com/FerroGit/vue-boolzapp",
+                        github: "https://ferrogit.github.io/Boolzapp/",
                         img: "img/boolzap.jpg",
                         desc: "Replica di una piattaforma di messaggistica. E' possibile inviare e ricevere messaggi in maniera istantanea.",
                         tec: "Vue.JS | HTML | CSS"
@@ -26,7 +26,7 @@ var app = new Vue({
 
                     {
                         
-                        github: "https://github.com/FerroGit/vue-boolflix",
+                        github: "https://ferrogit.github.io/Boolflix/",
                         img: "img/boolflix.jpg",
                         desc: "Creazione di un sito simile a Netflix. L'utente potrà ricercare Film o Serie TV a piacimento",
                         tec: "Vue.JS | HTML | CSS"
@@ -39,7 +39,7 @@ var app = new Vue({
 
                     {
                        
-                        github: "https://github.com/FerroGit/deliveboo-proj",
+                        github: "https://ferrogit.github.io/Barber-Shop/",
                         img: "img/barber.jpg",
                         desc: "Layout ispirato per essere utilizzato da un Barber Shop",
                         tec: "Vue.JS | HTML | CSS"
@@ -63,9 +63,9 @@ var app = new Vue({
                 data: [
                     {
                         
+                        github: "https://ferrogit.github.io/Spotify-Web/",
                         img: "img/spotify.jpg",
                         desc:"Replica Web App di Spotify",
-                        github: "https://github.com/FerroGit/html-css-spotifyweb",
                         tec: "HTML | CSS"
                     }
                 ]
