@@ -41,7 +41,7 @@ var app = new Vue({
                        
                         github: "https://ferrogit.github.io/Barber-Shop/",
                         img: "img/barber.jpg",
-                        desc: "Layout ispirato per essere utilizzato da un Barber Shop",
+                        desc: "Layout orientato per essere utilizzato da un Barber Shop",
                         tec: "Vue.JS | HTML | CSS"
                     }
                 ],
@@ -53,7 +53,7 @@ var app = new Vue({
                         
                         github: "https://github.com/FerroGit/deliveboo-proj",
                         img: "img/deliveboo.jpg",
-                        desc: "Creazione da zero un sito ispirato al food delivery. L'utente visitatore potrà ordinare piatti dal menu del ristorante selezionato, e procedere al pagamento, confermato via Mail. L'utente registrato potrà inserire il suo ristorante, creare, modificare o eliminare i suoi piatti dal menu, e infine controllare gli ordini ricevuti.",
+                        desc: "Sito dedicato al food delivery. L'utente visitatore potrà ordinare piatti dal menu del ristorante selezionato, e procedere al pagamento, confermato via Mail. L'utente registrato potrà inserire il suo ristorante, creare, modificare o eliminare i suoi piatti dal menu, e infine controllare gli ordini ricevuti.",
                         tec: "Laravel | PHP | Braintree | Vue.JS | HTML | SASS | Bootstrap "
                     }
                 ]
