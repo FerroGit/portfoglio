@@ -210,12 +210,41 @@ header{
 
 /* ANIMAZIONI */
 /*card*/
-
+.card_special {
+    position: relative;
+    width: 350px;
+    height: 659px;
+    transform-style: preserve-3d;
+}
 .card{
     position: relative;
     width: 730px;
     height: 400px;
     transform-style: preserve-3d;
+}
+.card_special .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(14, 14, 14);
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 1.5s ease-in-out;
+    transform: perspective(500px) rotateY(0deg);
+}
+.card_special:hover .face.front{
+    transform: perspective(500px) rotateY(180deg);
+}
+.card_special .face.back{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    background: rgb(0, 96, 185);
+    transform: perspective(500px) rotateY(180deg);
 }
 .card .face{
     position: absolute;
@@ -241,8 +270,17 @@ header{
     background: rgb(0, 96, 185);
     transform: perspective(500px) rotateY(180deg);
 }
+
 .face.back h3{
     color: rgb(14, 14, 14);;
+}
+.card_special:hover .face.back{
+    transform: perspective(500px) rotateY(360deg);
+}
+.card_special .face h2{
+    font-size: 4em;
+    transform: perspective(500px) translateZ(50px);
+    text-transform: uppercase;
 }
 .card:hover .face.back{
     transform: perspective(500px) rotateY(360deg);

@@ -75,7 +75,7 @@
                     
                     <h2> <span> MY </span> PROJECTS</h2>
                     <p>
-                       <strong> Di seguito alcuni dei miei progetti, realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers </strong>
+                       <strong> Di seguito alcuni dei miei progetti, molti sono stati realizzati durante la frequentazione di un corso full time di oltre 700 ore, presso Boolean Careers </strong>
                     </p>
                 </div>
                 <div class="slider-container" tabindex="10" @keydown.right="prevImg" @keydown.left='nextImg'>
@@ -96,9 +96,9 @@
                         <!-- attivo -->
                         <div v-for="(item, index) in carousel" :class="active(index)">
                             
-                            <div class="card" v-for="data in carousel[indexCarousel].data">
+                            <div v-for="data in carousel[indexCarousel].data" :class = "data.class">
                                 <div class="animation-img">
-                                    <img  class="face front" :src="data.img" @mouseenter="clear">
+                                    <img class="face front" :src="data.img" @mouseenter="clear">
                                 </div>
                                 <div class="description-img">
                                     
