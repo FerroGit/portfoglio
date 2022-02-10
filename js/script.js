@@ -77,7 +77,7 @@ var app = new Vue({
                 ]
             },
             {
-                project: "WheaterApp",
+                project: "wheater App",
                 data: [
                     {
 
@@ -86,6 +86,19 @@ var app = new Vue({
                         desc: "Creazione di un'app per sapere la temperatura esatta in una qualsiasi città nel mondo",
                         tec: "Python",
                         class: "card_special"
+                    }
+                ],
+            },
+            {
+                project: "mercery shop",
+                data: [
+                    {
+
+                        github: "https://github.com/FerroGit/merceryReact",
+                        img: "img/mercery_react.jpg",
+                        desc: "Primo approccio con il framework React, ho realizzato uno Shop Online di una Merceria",
+                        tec: "React | Bootstrap",
+                        class: "card"
                     }
                 ],
             }
