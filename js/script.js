@@ -81,7 +81,7 @@ var app = new Vue({
                 data: [
                     {
 
-                        github: "",
+                        github: "https://github.com/FerroGit/Temp_city",
                         img: "img/python_firstApp.jpg",
                         desc: "Creazione di un'app per sapere la temperatura esatta in una qualsiasi città nel mondo",
                         tec: "Python",
